@@ -55,7 +55,12 @@ function App() {
       <main>
         <div className="flex flex-col">
           <div className="flex">
-            <form method="post" onSubmit={handleSubmit}>
+            <form
+              method="post"
+              role="form"
+              data-testid="add-form"
+              onSubmit={handleSubmit}
+            >
               <input
                 type="number"
                 name="people"
@@ -64,11 +69,11 @@ function App() {
                 placeholder="Nro de personas"
               />
               <button role="add-btn" type="submit">
-                Anadir
+                Añadir
               </button>
             </form>
           </div>
-          <ul>
+          <ul role="list">
             {activities.map((activity) => (
               <li key={activity.id} className="flex align-center">
                 <h4> {activity.activity} </h4>
